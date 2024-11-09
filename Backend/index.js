@@ -3,6 +3,9 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import model from './Models/Todo.js'; // Ensure the file extension is included for ES modules
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const port = 3000;
 const app = express();
@@ -12,7 +15,7 @@ app.use(express.json());
 
 const _dirname = path.resolve();
 
-mongoose.connect('mongodb://0.0.0.0:27017/create');
+mongoose.connect(`mongodb+srv://shresthjindal28:${process.env.DB_PASSWORD}@merntech.vw6eb.mongodb.net/?retryWrites=true&w=majority&appName=merntech`);
 
 app.get('/get', (req, res) => {
     model.find().then(data => {
