@@ -7,7 +7,7 @@ const Create = () => {
     const [task, setTask] = useState()
 
     const handleAdd = () => {
-        console.log('Add button clicked')
+        // console.log('Add button clicked')
         axios.post('http://localhost:3000/create', {task: task})
         .then(res => {
             // console.log(res)
