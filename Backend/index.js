@@ -12,7 +12,7 @@ app.use(express.json());
 
 const _dirname = path.resolve();
 
-mongoose.connect('mongodb://localhost:27017/create');
+mongoose.connect('mongodb://0.0.0.0:27017/create');
 
 app.get('/get', (req, res) => {
     model.find().then(data => {
